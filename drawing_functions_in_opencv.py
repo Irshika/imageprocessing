@@ -1,7 +1,10 @@
 import numpy as np 
 import cv2
 
-img = cv2.imread('lena.jpg',1)
+#img = cv2.imread('lena.jpg',1)
+img = np.zeros([512, 512, 3], np.uint8)      #draws a black image
+#arg 1 : a list containing Height, Width and 3
+#arg 2 : dtype 
 
 # modify to the img
 #img = cv2.line(img, (100, 100), (400, 100), (135,156,30), 5)       #arg 1 : the source
