@@ -7,10 +7,12 @@ img = np.zeros([512, 512, 3], np.uint8)      #draws a black image
 #arg 2 : dtype 
 
 # modify to the img
-#img = cv2.line(img, (100, 100), (400, 100), (135,156,30), 5)       #arg 1 : the source
-                                                            #arg 2, 3 : the starting coordinates, ending cordinates
-                                                            #arg 4 : the color (BGR)
-                                                            # arg 5 : thickness
+#img = cv2.line(img, (100, 100), (400, 100), (135,156,30), 5)      
+#arg 1 : the source
+#arg 2, 3 : the starting coordinates, ending cordinates
+#arg 4 : the color (BGR)
+# arg 5 : thickness
+
 #img = cv2.arrowedLine(img, (100, 100), (400, 100), (135,156,30), 5)
 
 img = cv2.rectangle(img,(384,0), (510,128), (0,0,255), 5 )
