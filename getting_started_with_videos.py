@@ -7,9 +7,10 @@ while(True):
     ret, frame = capture.read()                # ret - is there video is available(True or false will be saved)
                                                # frame - frame will be saved / capture the frame
 
-    cv2.imshow('frame', frame)
+    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)      # convert to grayscale
+    cv2.imshow('frame', gray)
 
     if cv2.waitKey(1) & 0xFF == ord ('q'):
         break
-capture.release()
+capture.release()                   # releasing the capture
 cv2.destroyAllWindows()
