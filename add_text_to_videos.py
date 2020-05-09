@@ -5,7 +5,7 @@ capture = cv2.VideoCapture(0)
 print(capture.get(cv2.CAP_PROP_FRAME_WIDTH))            #associate number of WIDTH = 3
 print(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))           #associate number of HEIGHT = 4
 
-capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1208)
+capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 #capture.set(3, 1208)           #same as above
 capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 #capture.set(4, 720)            #same as above
