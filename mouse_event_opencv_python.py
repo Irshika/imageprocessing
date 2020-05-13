@@ -2,22 +2,33 @@ import numpy as np
 import cv2
 
 #list out all the events in cv2 package
-events = [ i for i in dir(cv2) if 'EVENT' in i]
+#events = [ i for i in dir(cv2) if 'EVENT' in i]
 #print(events)   
 
 def click_event(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
-        cv2.circle(img, (x, y), 3, (0,0,255), -1)
-            #arg 1: source
-            #arg 2: x and y coordinates
-            #arg 3: radius
-            #arg 4: color
-            #arg 5: thickness
-        points.append((x, y))    
-        if len(points) >=2:
-            cv2.line(img, points[-1], points[-2], (0, 0, 255), 5)
-        cv2.imshow('Image', img)
 
+        # cv2.circle(img, (x, y), 3, (0,0,255), -1)
+        #     #arg 1: source
+        #     #arg 2: x and y coordinates
+        #     #arg 3: radius
+        #     #arg 4: color
+        #     #arg 5: thickness
+        # points.append((x, y))    
+        # if len(points) >=2:
+        #     cv2.line(img, points[-1], points[-2], (0, 0, 255), 5)
+        
+        #creating the color picker 
+        blue = img[x, y, 0]#get blue channel
+        green = img[x, y, 1]            #get green channel
+        red = img[x, y, 2]              #get red channel
+        cv2.circle(img, (x, y), 3, (0, 0, 255), -1)
+        mycolorImage = np.zeros((512, 512, 3), np.uint8)
+
+        mycolorImage[:] = [blue, green, red]
+        cv2.imshow('Color picker', mycolorImage)
+
+        #cv2.imshow('Image', img)
 
 # Showing the color channels
     # if event == cv2.EVENT_RBUTTONDOWN:
@@ -34,8 +45,8 @@ def click_event(event, x, y, flags, param):
     #     cv2.imshow('Image', img)
         
 
-#img = cv2.imread('lena.jpg', 1)
-img = np.zeros((512, 512 , 3),np.uint8)
+img = cv2.imread('lena.jpg')
+#img = np.zeros((512, 512 , 3),np.uint8)
 cv2.imshow('Image', img)
 
 points = []
@@ -48,3 +59,5 @@ cv2.setMouseCallback('Image', click_event)
 k = cv2.waitKey(0) & 0xFF         
 if k == 27 | k == ord('q'):                               
     cv2.destroyAllWindows()                   
+
+
