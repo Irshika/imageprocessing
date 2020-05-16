@@ -4,7 +4,13 @@ import numpy as np
 def nothing(x):
     pass
 
-#cv2.namedWindow("Tracking")
+cv2.namedWindow("Tracking")
+cv2.createTrackbar("LH", "Tracking", 0, 255, nothing)       #LH -> Lower Hue
+cv2.createTrackbar("LS", "Tracking", 0, 255, nothing)       #LH -> Lower Saturation
+cv2.createTrackbar("LV", "Tracking", 0, 255, nothing)       #LH -> Lower Value
+cv2.createTrackbar("UH", "Tracking", 255, 255, nothing)       #LH -> Upper Hue
+cv2.createTrackbar("US", "Tracking", 255, 255, nothing)       #LH -> Upper Saturation
+cv2.createTrackbar("UV", "Tracking", 255, 255, nothing)       #LH -> Upper Value
 
 while True:
     frame = cv2.imread('smarties.png')
@@ -12,8 +18,16 @@ while True:
     #convert to HSV
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    lower_b = np.array([110, 50, 50])       #lower limit for hsv blue color
-    upper_b = np.array([130, 255, 255])     #upper limit for hsv blue color 
+    lower_h = cv2.getTrackbarPos("LH", "Tracking")
+    lower_s = cv2.getTrackbarPos("LS", "Tracking")
+    lower_v = cv2.getTrackbarPos("LV", "Tracking")
+
+    Upper_h = cv2.getTrackbarPos("UH", "Tracking")
+    Upper_s = cv2.getTrackbarPos("US", "Tracking")
+    Upper_v = cv2.getTrackbarPos("UV", "Tracking")
+
+    lower_b = np.array([lower_h, lower_s, lower_v])       #lower limit for hsv blue color
+    upper_b = np.array([Upper_h, Upper_s, Upper_v])     #upper limit for hsv blue color 
 
     #treshold the image and get only the blue color
     mask = cv2.inRange(hsv, lower_b, upper_b)
