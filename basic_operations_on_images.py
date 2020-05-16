@@ -41,8 +41,19 @@ img[273:333, 100:160] = ball
 img = cv2.resize(img, (512, 512))
 img2 = cv2.resize(img2, (512, 512))
 
-#for merging two or more images, they must be same size
-dst = cv2.add(img, img2)
+#for merging two or more images, they must be same size : Just add two images
+#dst = cv2.add(img, img2)
+
+#addWeighted : mentioning weights
+dst = cv2.addWeighted(img, 0.2,img2, 0.8, 0)
+    #arg1 : array element 1
+    #arg2 : weight of the first array element
+    #arg3 : array element 2
+    #arg4 : weight of the secong array element
+    #arg5 : scalar added 
+    #arg 6: output array
+
+    # dst = (source1 * alpha) + (source2 * beta) + gamma
 
 cv2.imshow('Image', dst)
 
