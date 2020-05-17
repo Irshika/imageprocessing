@@ -11,8 +11,8 @@ from matplotlib import pyplot as plt
 # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 # img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
-#img = cv2.imread('messi5.jpg', cv2.IMREAD_GRAYSCALE)       #same procedure from line 10 to 12
-img = cv2.imread('sudoku.png', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('messi5.jpg', cv2.IMREAD_GRAYSCALE)       #same procedure from line 10 to 12
+#img = cv2.imread('sudoku.png', cv2.IMREAD_GRAYSCALE)
 
 #Laplacian method
 lap = cv2.Laplacian(img, cv2.CV_64F, ksize=3)
@@ -37,10 +37,13 @@ sobelY = np.uint8(np.absolute(sobelY))
 #combining sobelX and sobelY
 sobelCombined = cv2.bitwise_or(sobelX, sobelY)
 
-titles = ['image', 'Laplacian', 'sobelX', 'sobelY', 'sobelCombined']
-images = [img, lap, sobelX, sobelY, sobelCombined]
+#canny edge detector
+canny = cv2.Canny(img, 100, 200)        #this method removes more noise
 
-for i in range(5):
+titles = ['image', 'Laplacian', 'sobelX', 'sobelY', 'sobelCombined', 'Canny']
+images = [img, lap, sobelX, sobelY, sobelCombined, canny]
+
+for i in range(6):
     plt.subplot(2, 3, i+1), plt.imshow(images[i], 'gray')
     plt.title(titles[i])
     plt.xticks([]), plt.yticks([])
