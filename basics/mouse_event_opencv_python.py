@@ -19,7 +19,7 @@ def click_event(event, x, y, flags, param):
         #     cv2.line(img, points[-1], points[-2], (0, 0, 255), 5)
         
         #creating the color picker 
-        blue = img[x, y, 0]#get blue channel
+        blue = img[x, y, 0]             #get blue channel
         green = img[x, y, 1]            #get green channel
         red = img[x, y, 2]              #get red channel
         cv2.circle(img, (x, y), 3, (0, 0, 255), -1)
