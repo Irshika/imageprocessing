@@ -1,6 +1,8 @@
 #probabilistic hough line transform is a extended version on hough line transform
 
 #------------------------ !Enhance the functionality later ----------------------------------
+#tips 
+    #need to specify "roi" (region in intrest)
 
 import cv2
 import numpy as np 
