@@ -70,11 +70,14 @@ def process(image):
         image_with_lines = draw_lines(image, lines)
     return image_with_lines
 
-capture = cv2.VideoCapture('clip2.mp4')
+#capture = cv2.VideoCapture('test1.mp4')
+capture = cv2.VideoCapture('clip1.mp4')
+
 
 #check whether the video is available or not
 while(capture.isOpened()):
     ret, frame = capture.read()
+    #frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)             #if needed
     frame = process(frame)
     cv2.imshow('frame', frame)
     
