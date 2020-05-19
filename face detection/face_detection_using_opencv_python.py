@@ -4,9 +4,9 @@
 import cv2
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-img = cv2.imread('face3.jpg')
+img = cv2.imread('face4.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-faces = face_cascade.detectMultiScale(gray, 1.10, 4)            
+faces = face_cascade.detectMultiScale(gray, 1.1, 8)            
 #faces = cv2.CascadeClassifier.detectMultiScale(gray, 1.1, 4)            #detect the faces inside the image
     #faces - Vector of rectangles where each rectangle contains the detected object, the rectangles may be partially outside the original image 
     #arg 1: Image - Matrix of the type CV_8U containing an image where objects are detected.
