@@ -4,8 +4,8 @@
 import cv2
 import numpy as np
 
-#img = cv2.imread('smarties.png') 
-img = cv2.imread('shapes.jpg')
+#img = cv2.imread('../data/smarties.png') 
+img = cv2.imread('../data/shapes.jpg')
 output = img.copy()
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

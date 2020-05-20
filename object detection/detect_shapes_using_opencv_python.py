@@ -1,7 +1,7 @@
 import cv2
 import numpy as np 
 
-img = cv2.imread('shapes.jpg')            #read image
+img = cv2.imread('../data/shapes.jpg')            #read image
 imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)          #convert to grayscale
 _, thresh = cv2.threshold(imgray, 240, 255, cv2.THRESH_BINARY)            #find threshold
 contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)            #find contours

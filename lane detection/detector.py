@@ -31,8 +31,8 @@ def draw_lines(img, lines):
     return img
 
 
-image = cv2.imread('road.png')
-#image = cv2.imread('road4.jpg')
+image = cv2.imread('../data/road.png')
+#image = cv2.imread('../data/road4.jpg')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 #define the region of interest (roi)

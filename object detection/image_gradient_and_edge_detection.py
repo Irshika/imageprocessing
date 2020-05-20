@@ -7,12 +7,12 @@ import cv2
 import numpy as np 
 from matplotlib import pyplot as plt  
 
-# img = cv2.imread('messi5.jpg')
+# img = cv2.imread('../data/messi5.jpg')
 # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 # img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
-img = cv2.imread('messi5.jpg', cv2.IMREAD_GRAYSCALE)       #same procedure from line 10 to 12
-#img = cv2.imread('sudoku.png', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('../data/messi5.jpg', cv2.IMREAD_GRAYSCALE)       #same procedure from line 10 to 12
+#img = cv2.imread('../data/sudoku.png', cv2.IMREAD_GRAYSCALE)
 
 #Laplacian method
 lap = cv2.Laplacian(img, cv2.CV_64F, ksize=3)

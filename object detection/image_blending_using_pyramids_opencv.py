@@ -11,8 +11,8 @@ import cv2
 import numpy as np 
 
 #1 - loading two images
-apple = cv2.imread('apple.jpg')
-orange = cv2.imread('orange.jpg')
+apple = cv2.imread('../data/apple.jpg')
+orange = cv2.imread('../data/orange.jpg')
 
 print(apple.shape)
 print(orange.shape)

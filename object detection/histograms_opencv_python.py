@@ -7,7 +7,7 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-img = cv2.imread('lena.jpg', 0)
+img = cv2.imread('../data/lena.jpg', 0)
 #img = np.zeros((200, 200), np.uint8)
 #cv2.rectangle(img, (0, 100), (200, 200), (255, 255, 255), -1)
 #cv2.rectangle(img, (0, 50), (100, 100), (127, 127, 127), -1)

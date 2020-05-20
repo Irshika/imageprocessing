@@ -12,7 +12,7 @@ import cv2
 import numpy as np 
 from matplotlib import pyplot as plt  
 
-img = cv2.imread('smarties.png', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('../data/smarties.png', cv2.IMREAD_GRAYSCALE)
 _, mask = cv2.threshold(img, 220, 255, cv2.THRESH_BINARY_INV)
 
 kernel = np.ones((5,5), np.uint8)           #bigger the rectangle, better the kernel result. but it affects the object size (increases)

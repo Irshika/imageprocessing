@@ -13,7 +13,7 @@ from matplotlib import pyplot as plt
 def nothing(x):
     print(x)
 
-img = cv2.imread('messi5.jpg', 0)
+img = cv2.imread('../data/messi5.jpg', 0)
 cv2.namedWindow('image')
 
 cv2.createTrackbar('TH1', 'image', 0, 255, nothing)

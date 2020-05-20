@@ -27,8 +27,8 @@ import numpy as np
 #           thats how we detect corners 
 
 #using harris corner detector
-img = cv2.imread('blox.jpg')
-#img = cv2.imread('chessboard.png')
+img = cv2.imread('../data/blox.jpg')
+#img = cv2.imread('../data/chessboard.png')
 img = cv2.resize(img, (512, 512))           #if needed
 
 cv2.imshow('Image', img)

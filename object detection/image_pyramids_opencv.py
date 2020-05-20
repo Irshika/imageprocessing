@@ -11,7 +11,7 @@
 import cv2
 import numpy as np 
 
-img = cv2.imread('lena.jpg')
+img = cv2.imread('../data/lena.jpg')
 
 # #gaussian pyramids
 # #pyrDown() - gives 1/4 resolution of the source

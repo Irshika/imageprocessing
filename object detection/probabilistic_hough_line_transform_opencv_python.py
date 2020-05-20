@@ -7,11 +7,11 @@
 import cv2
 import numpy as np 
 
-# img = cv2.imread('sudoku.png')
-# img = cv2.imread('road1.jpg')
-# img = cv2.imread('road2.jpg')
-# img = cv2.imread('road3.jpg')
-img = cv2.imread('road4.jpg')
+# img = cv2.imread('../data/sudoku.png')
+# img = cv2.imread('..data/road1.jpg')
+# img = cv2.imread('../data/road2.jpg')
+# img = cv2.imread('../data/road3.jpg')
+img = cv2.imread('../data/road4.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 edges = cv2.Canny(gray, 50, 150, apertureSize=3)
  

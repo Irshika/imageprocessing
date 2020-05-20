@@ -31,7 +31,7 @@ def draw_lines(img, lines):
     return img
 
 
-# image = cv2.imread('road.png')
+# image = cv2.imread('../data/road.png')
 # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 def process(image):
@@ -70,7 +70,7 @@ def process(image):
         image_with_lines = draw_lines(image, lines)
     return image_with_lines
 
-capture = cv2.VideoCapture('clip1.mp4')
+capture = cv2.VideoCapture('../data/clip1.mp4')
 
 #check whether the video is available or not
 while(capture.isOpened()):

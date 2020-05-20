@@ -3,7 +3,7 @@ import cv2
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye_tree_eyeglasses.xml')
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #cap = cv2.VideoCapture(0)
-cap = cv2.VideoCapture('head-pose-face-detection-male.mp4')
+cap = cv2.VideoCapture('../data/head-pose-face-detection-male.mp4')
 
 while (cap.isOpened()):
     _ , img = cap.read()
