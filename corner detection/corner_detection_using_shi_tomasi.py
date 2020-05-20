@@ -4,7 +4,7 @@ import numpy as np
 
 #using Shi Tomasi corner detector
 #it gives better result compared to Harris. Also we can find top end corners (in case of we dont want to find all the corners in the image)
-img = cv2.imread('pic1.png')
+img = cv2.imread('blox.jpg')
 img = cv2.resize(img, (512, 512))           #if needed
 
 cv2.imshow('Image', img)
