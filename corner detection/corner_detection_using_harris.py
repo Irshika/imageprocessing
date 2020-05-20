@@ -27,10 +27,11 @@ import numpy as np
 #           thats how we detect corners 
 
 #using harris corner detector
-img = cv2.imread('chessboard.png')
+img = cv2.imread('pic1.png')
+#img = cv2.imread('chessboard.png')
 img = cv2.resize(img, (512, 512))           #if needed
 
-cv2.imshow('img', img)
+cv2.imshow('Image', img)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 gray = np.float32(gray)         #because cornerHarris() takes gray as float32, so we have to do the conversion
@@ -44,7 +45,7 @@ dst = cv2.dilate(dst, None)         #to get the better result we need to dilate
 
 img[dst > 0.01 * dst.max()] = [0, 0, 255]           #returning to original image with optimal threshold value.
 
-cv2.imshow('dst', img)
+cv2.imshow('Harris', img)
 
 if cv2.waitKey(0) & 0xFF == 27:
     cv2.destroyAllWindows()
